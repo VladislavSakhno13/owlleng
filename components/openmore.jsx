@@ -8,16 +8,89 @@ class More extends React.Component {
             </div>
             <div className="shopbox2">
                 <div id="name">
-                    <span >имя</span>
+                    <span >Имя:</span><span >{" " + this.props.name}</span>
                 </div>
                 <div className="tovarblock">
-                    <span id="articul">Язык:</span><span>{" " + this.props.articul}</span>
+                    <span id="articul">Язык:</span><span>{" " + this.props.legname}</span>
                 </div>
                 <div className="tovarblock" id="costtovar">
-                    <span>оценка</span>
+                    <span>Оценка:</span><span>{" " + this.props.reviews}</span>
                 </div>
 
-                  <div className="tovarblock"><span>номер</span><span>{" " + this.props.n1}</span></div>
+                  <div className="tovarblock"><span>номер</span><span>{" " + this.props.number}</span></div>
+            </div>
+            <div className="shopbox3">
+                <div>
+                <select name="" id="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                </div>
+                <div>
+                <select name="" id="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                </div>
+                <div>
+                <select name="" id="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                </div>
+                <div>
+                <select name="" id="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                </div>
+                <div>
+                <select name="" id="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>   
+                </div>
+                
             </div>
         </div>
         )

@@ -197,17 +197,22 @@
     background-color: #fff;
     box-shadow: inset 6px 18px 8px rgba(0, 0, 0, .2);
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "shopbox shopbox2"
+                        "shopbox3 shopbox3";
 }
-.shopbox{
-    display: grid;
-    
-}
+
 .imgbox{
     border: 2px solid #000;
-    width: 554px;
-    height: 554px;
-    margin-left: 20%;
-    align-self: center;
+    width: 254px;
+    height: 254px;
+    margin-top: 5%;
+    margin-left: 10%;
+    
+}
+.imgbox>img{
+    width: 250px;
+    height: 250px;
 }
 #name{
     font-size: 17pt;
@@ -216,3 +221,18 @@
 .tovarblock{
     margin-top: 30px;
     margin-bottom: 30px;
+}
+.shopbox{
+    
+    grid-area: shopbox;
+}
+.shopbox2{
+    grid-area: shopbox2;
+}
+.shopbox3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    border: 1px solid #000;
+    width: 100%;
+    grid-area: shopbox3;
+}

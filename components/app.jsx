@@ -17,7 +17,6 @@ document.getElementById('catalog').onclick = function(){
     ReactDOM.render(<Catalog/>,document.getElementById('body'));
        axios.get('./rest/getteach.php')
        .then(function(response){
-           console.log(response.data);
         for(let i = 0;i<16;i++){
             renderteacher(response.data[i]);
         }
@@ -39,7 +38,7 @@ function renderteacher(datateach){//доп серги
     p.className="zakaz";
     p.innerHTML = "ПОДРОБНЕЕ";
     p.onclick = function(){
-        ReactDOM.render(<More/>,document.getElementById('body'));
+        ReactDOM.render(<More name = {datateach.name} legname = {datateach.legname} reviews = {datateach.reviews} img = {datateach.img} number = {datateach.number}/>,document.getElementById('body'));
     }
     div.appendChild(img);
     div.appendChild(spantext);

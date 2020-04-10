@@ -22,6 +22,7 @@ document.getElementById('catalog').onclick = function(){
         }
        })
 }
+
 function renderteacher(datateach){//доп серги
     const div = document.createElement('div');
     div.className = "ringform";
@@ -38,7 +39,7 @@ function renderteacher(datateach){//доп серги
     p.className="zakaz";
     p.innerHTML = "ПОДРОБНЕЕ";
     p.onclick = function(){
-        ReactDOM.render(<More name = {datateach.name} legname = {datateach.legname} reviews = {datateach.reviews} img = {datateach.img} number = {datateach.number}/>,document.getElementById('body'));
+        ReactDOM.render(<More name = {datateach.name} legname = {datateach.legname} reviews = {datateach.reviews} img = {datateach.img} number = {datateach.number} id={datateach.id}/>,document.getElementById('body'));
     }
     div.appendChild(img);
     div.appendChild(spantext);

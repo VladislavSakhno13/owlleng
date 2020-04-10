@@ -232,7 +232,99 @@
 .shopbox3{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     border: 1px solid #000;
     width: 100%;
     grid-area: shopbox3;
+    grid-template-areas: "s1 s2 s3 s4 s5"
+                        "sub sub sub sub sub";
+}
+.select{
+    width: 110px;
+}
+.submit{
+    display: grid;
+    grid-area: sub;
+    align-items: end;
+    justify-content: end;
+}
+#sel1{
+    grid-area: s1;
+}
+#sel2{
+    grid-area: s2;
+}
+#sel3{
+    grid-area: s3;
+}
+#sel4{
+    grid-area: s4;
+}
+#sel5{
+    grid-area: s5;
+}
+.btnsub{
+    display: grid;
+    height: 40px;
+    width: 100px;
+    background-color:#6b8e23;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #556B2F;
+    margin-bottom: 15px;
+}
+.btnsub:hover{
+    background-color: #808080;
+}
+.admin{
+    height: 20px;
+    width: 20px;
+    background-color: yellow;
+}
+
+
+
+.block{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1700px;
+    height: 800px;
+}
+.admininput{
+    width: 200px;
+    height: 30px;
+}
+.showdata{
+    display: grid;
+    max-width: 1700px;
+    height: 800px;
+    width: 100%;
+}
+#column{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: #DCDCDC;
+}
+#boxform{
+    border: 1px solid #000;
+    width: 300px;
+    align-self: center;
+    justify-self: center;
+}
+.buttonC{
+    width: 70px;
+    height: 40px;
+    background-color: #000;
+    line-height:35px;
+    color: #fff;
+    text-align: center;     
+}
+.buttonC:hover{
+    background-color:#DCDCDC;
+    color:#000;
+}
+#buttonblock{
+    display: grid;
+    grid-template-columns: 1fr  1fr 1fr 1fr;
 }

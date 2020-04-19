@@ -6,7 +6,7 @@
  if($_SERVER['REQUEST_METHOD'] == 'GET'){
     
         $data = array();
-        $sql = $conect->query("SELECT * FROM `signup`");
+        $sql = $conect->query("SELECT * FROM `student`");
         while ($d = $sql->fetch_assoc()) {
             $data[] = $d;   
     }
@@ -16,13 +16,16 @@
 else if($_SERVER['REQUEST_METHOD'] == 'POST'){
    
 
-    if(isset($input['login']) and isset($input['password'])){
-       
-        $data = date("YmdHis");
-        $conect->query("INSERT INTO `signup` (`login`,`password`,`data`) VALUES('$input[login]','$input[password]',$data)");
-        $sql = $conect->query("SELECT * FROM `a place` ORDER BY id DESC LIMIT 1");
+    if($input['pass'] !=""){
+        $sql = $conect->query("SELECT * FROM `student` WHERE `password` = $input[pass]");
         $data = $sql->fetch_assoc();
-        exit(json_encode($data));
+        if($data != NULL){
+            exit(json_encode($data));
+        }
+        else{
+            exit(json_encode("error"));
+        }
+        //exit(json_encode($data));
     } else exit(json_encode( array("status" => 'Error')));
 
     

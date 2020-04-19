@@ -1,21 +1,32 @@
 var React = require('react');
 var axios = require('axios');
+var ReactDOM = require('react-dom');
+var Rewpage = require('./rewpage.jsx');
 class More extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            id:this.props.id,
             reviews1: 0,
             reviews2: 0,
             reviews3: 0,
             reviews4: 0,
-            reviews5: 0
+            reviews5: 0,
+            pass:""
         };
+        
        this.getrew1=this.getrew1.bind(this);
        this.getrew2=this.getrew2.bind(this);
        this.getrew3=this.getrew3.bind(this);
        this.getrew4=this.getrew4.bind(this);
        this.getrew5=this.getrew5.bind(this);
        this.setData=this.setData.bind(this);
+       this.getp=this.getp.bind(this);
+       this.openclose=this.openclose.bind(this);
+    }
+    getp(event){
+        let val = event.target.value;
+        this.setState({pass:val});
     }
     getrew1(event){
         let val = event.target.value;
@@ -52,6 +63,24 @@ class More extends React.Component {
             console.log(response.data);
        })
     }
+    openclose(){
+        let id = this.state.id;
+        let data = {
+           pass: this.state.pass
+        }
+        console.log(data);
+        axios.post('./rest/signup.php',JSON.stringify(data))
+        .then(function(response){
+            console.log(response.data);
+                if((response.data.status == "Error") || (response.data == "error")){
+                    alert("Введите свой пароль");
+                }
+                else{
+                    ReactDOM.render(<Rewpage id={id}/>,document.getElementById('shopbox32'));
+                }
+        })
+        
+    }
     render(){
         return(
             <div id="pageTovar">
@@ -71,11 +100,16 @@ class More extends React.Component {
 
                   <div className="tovarblock"><span>номер</span><span>{" " + this.props.number}</span></div>
             </div>
-            <div className="shopbox3">
-                
+            <div id="shopbox32">
+                    <div id="passchi">
+                        <input type="text" placeholder="ваш пароль" id="pass" onChange={this.getp}/>
+                        <p id="sendpass" onClick={this.openclose}>Отправить</p>
+                    </div>
+            
             </div>
         </div>
         )
     }
 }
+
 module.exports = More;
